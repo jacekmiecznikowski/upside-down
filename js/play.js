@@ -78,25 +78,25 @@ var playState = {
         this.levelsButton.fixedToCamera = true;
 
 
-        this.rightBtn =  game.add.button(200, game.global.height - 30, 'buttons');
+        this.rightBtn =  game.add.button(200, game.global.height - 40, 'buttons');
         this.rightBtn.frame = 1;
         this.rightBtn.anchor.setTo(0.5, 0.5);
-        this.rightBtn.scale.setTo(1, 1);
+        this.rightBtn.scale.setTo(2, 2);
         this.rightBtn.fixedToCamera = true;
         this.rightBtn.alpha = 0.7;
 
-        this.leftBtn =  game.add.button(50, game.global.height - 30, 'buttons');
+        this.leftBtn =  game.add.button(50, game.global.height - 40, 'buttons');
         this.leftBtn.frame = 0;
         this.leftBtn.anchor.setTo(0.5, 0.5);
-        this.leftBtn.scale.setTo(1, 1);
+        this.leftBtn.scale.setTo(2, 2);
         this.leftBtn.fixedToCamera = true;
         this.leftBtn.alpha = 0.7;
         
-        this.upBtn =  game.add.button(game.global.width - 50, game.global.height - 30, 'buttons', this.switchGravity, this);
+        this.upBtn =  game.add.button(game.global.width - 50, game.global.height - 40, 'buttons', this.switchGravity, this);
         this.upBtn.frame = 2;
         this.upBtn.anchor.setTo(0.5, 0.5);
         this.upBtn.alpha = 0.7;
-        this.upBtn.scale.setTo(1, 1);
+        this.upBtn.scale.setTo(2, 2);
         this.upBtn.fixedToCamera = true;
         
         [this.leftBtn, this.rightBtn, this.upBtn].forEach(function (btn) {
