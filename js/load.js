@@ -12,6 +12,7 @@ var loadState = {
         game.load.image('wide_panel', 'assets/gfx/wide_panel.png');
         game.load.image('play_button', 'assets/gfx/play_button.png');
         game.load.image('restart_button', 'assets/gfx/restart_button.png');
+        game.load.spritesheet('buttons', 'assets/gfx/buttons.png', 50, 50);
         game.load.image('levels_button', 'assets/gfx/levels_button.png');
         game.load.spritesheet("sound_button", "assets/gfx/sound_button.png", 78, 78);
         game.load.image('info_button', 'assets/gfx/info_button.png');

@@ -76,10 +76,41 @@ var playState = {
         this.levelsButton.anchor.setTo(0.5, 0.5);
         this.levelsButton.scale.setTo(0.7, 0.7);
         this.levelsButton.fixedToCamera = true;
+
+
+        this.rightBtn =  game.add.button(200, game.global.height - 30, 'buttons');
+        this.rightBtn.frame = 1;
+        this.rightBtn.anchor.setTo(0.5, 0.5);
+        this.rightBtn.scale.setTo(1, 1);
+        this.rightBtn.fixedToCamera = true;
+        this.rightBtn.alpha = 0.7;
+
+        this.leftBtn =  game.add.button(50, game.global.height - 30, 'buttons');
+        this.leftBtn.frame = 0;
+        this.leftBtn.anchor.setTo(0.5, 0.5);
+        this.leftBtn.scale.setTo(1, 1);
+        this.leftBtn.fixedToCamera = true;
+        this.leftBtn.alpha = 0.7;
+        
+        this.upBtn =  game.add.button(game.global.width - 50, game.global.height - 30, 'buttons', this.switchGravity, this);
+        this.upBtn.frame = 2;
+        this.upBtn.anchor.setTo(0.5, 0.5);
+        this.upBtn.alpha = 0.7;
+        this.upBtn.scale.setTo(1, 1);
+        this.upBtn.fixedToCamera = true;
+        
+        [this.leftBtn, this.rightBtn, this.upBtn].forEach(function (btn) {
+            btn.isDown = false;
+            btn.events.onInputDown.add(function () { btn.isDown = true; });
+            btn.events.onInputUp.add(function () { btn.isDown = false; });
+        });
         game.world.bringToTop(this.player);
         game.world.bringToTop(this.soundButton);
         game.world.bringToTop(this.restartButton);
         game.world.bringToTop(this.levelsButton);
+        game.world.bringToTop(this.upBtn);
+        game.world.bringToTop(this.rightBtn);
+        game.world.bringToTop(this.leftBtn);
     },
 
     clearMap: function() {
@@ -252,13 +283,13 @@ var playState = {
         }
     },
     move: function() {
-        if (this.cursors.left.isDown || this.aKey.isDown) {
+        if (this.cursors.left.isDown || this.aKey.isDown || this.leftBtn.isDown) {
             this.player.body.velocity.x = -this.velocity;
             if (this.side !== 'left') {
                 this.player.animations.play('left');
                 this.side = 'left';
             }
-        } else if (this.cursors.right.isDown || this.dKey.isDown) {
+        } else if (this.cursors.right.isDown || this.dKey.isDown || this.rightBtn.isDown) {
             this.player.body.velocity.x = this.velocity;
 
             if (this.side !== 'right') {
