@@ -111,6 +111,11 @@ var playState = {
         game.world.bringToTop(this.upBtn);
         game.world.bringToTop(this.rightBtn);
         game.world.bringToTop(this.leftBtn);
+        if (game.device.desktop) {
+        this.upBtn.alpha= 0;
+        this.leftBtn.alpha=0;
+        this.rightBtn.alpha=0;
+        }
     },
 
     clearMap: function() {

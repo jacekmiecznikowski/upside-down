@@ -2,7 +2,8 @@ var bootState = {
     init: function() {
         game.stage.backgroundColor = '#3498db';
         game.physics.startSystem(Phaser.ARCADE);
-        game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+        game.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT
+        game.scale.parentIsWindow = true;;
         game.scale.pageAlignHorizontally = true;
         game.scale.pageAlignVertically = true;
         game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
