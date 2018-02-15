@@ -6,7 +6,6 @@ var bootState = {
         game.scale.pageAlignHorizontally = true;
         game.scale.pageAlignVertically = true;
         game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
-
     },
     preload: function() {
         game.load.image('progressBar', 'assets/gfx/progress_bar.png');
