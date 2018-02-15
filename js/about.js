@@ -13,7 +13,7 @@ var aboutState = {
         this.title.anchor.setTo(0.5, 0.5);
 
         this.msg = "Code, art, sounds & music by:\n";
-        this.msg += "Jacek Miecznikowski and Marcin Tederko";
+        this.msg += "Jacek Miecznikowski";
 
         this.info = game.add.bitmapText(game.world.centerX, 450, 'carter_one_small', this.msg, 20);
         this.info.anchor.setTo(0.5, 0.5);
