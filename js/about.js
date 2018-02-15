@@ -12,14 +12,12 @@ var aboutState = {
         this.title = game.add.bitmapText(game.world.centerX, 95, 'carter_one', "About", 42);
         this.title.anchor.setTo(0.5, 0.5);
 
-        this.msg = "Code, art, sounds & music by:\n";
+        this.msg = "Code, art, sounds & everything by:\n";
         this.msg += "Jacek Miecznikowski";
 
         this.info = game.add.bitmapText(game.world.centerX, 450, 'carter_one_small', this.msg, 20);
         this.info.anchor.setTo(0.5, 0.5);
         this.info.align = "center";
-
-
     },
     update: function() {
         this.logo.rotation += 0.005;
